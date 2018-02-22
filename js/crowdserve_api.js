@@ -667,7 +667,7 @@ window.addEventListener(("load"), () => {
   // event RoundBegun(string proposalString, uint previewStageEndTime, uint roundEndTime);
   window.csContract.getRoundBegunEvents = () => {
     return new Promise((resolve, reject) => {
-      var roundBegun = CrowdServe.RoundBegun({fromBlock: eventStartBlock, toBlock: 'latest'});
+      var roundBegun = CrowdServe.RoundBegun({}, {fromBlock: eventStartBlock, toBlock: 'latest'});
       roundBegun.get((err, res) => {
         if(err){
           reject(err);
@@ -689,7 +689,7 @@ window.addEventListener(("load"), () => {
   // event RoundEnding();
   window.csContract.getRoundEndingEvents = () => {
     return new Promise((resolve, reject) => {
-      var roundEnding = CrowdServe.RoundEnding({fromBlock: eventStartBlock, toBlock: 'latest'});
+      var roundEnding = CrowdServe.RoundEnding({}, {fromBlock: eventStartBlock, toBlock: 'latest'});
       roundEnding.get((err, res) => {
         if(err){
           reject(err);
@@ -708,7 +708,7 @@ window.addEventListener(("load"), () => {
   // event RoundEnded(uint amountRecalled, uint amountWithdrawn);
   window.csContract.getRoundEndedEvents = () => {
     return new Promise((resolve, reject) => {
-      var roundEnded = CrowdServe.RoundEnded({fromBlock: eventStartBlock, toBlock: 'latest'});
+      var roundEnded = CrowdServe.RoundEnded({}, {fromBlock: eventStartBlock, toBlock: 'latest'});
       roundEnded.get((err, res) => {
         if(err){
           reject(err);
@@ -729,7 +729,7 @@ window.addEventListener(("load"), () => {
    // event Contribution(address contributor, uint amount);
   window.csContract.getContributionEvents = () => {
     return new Promise((resolve, reject) => {
-      var contribution = CrowdServe.Contribution({fromBlock: eventStartBlock, toBlock: 'latest'});
+      var contribution = CrowdServe.Contribution({}, {fromBlock: eventStartBlock, toBlock: 'latest'});
       contribution.get((err, res) => {
         if(err){
           reject(err);
@@ -750,7 +750,7 @@ window.addEventListener(("load"), () => {
   // event FundsRecalled(address contributor, uint amountBurned, uint amountReturned, string message);
   window.csContract.getFundsRecalledEvents = () => {
     return new Promise((resolve, reject) => {
-      var fundsRecalled = CrowdServe.FundsRecalled({fromBlock: eventStartBlock, toBlock: 'latest'});
+      var fundsRecalled = CrowdServe.FundsRecalled({}, {fromBlock: eventStartBlock, toBlock: 'latest'});
       fundsRecalled.get((err, res) => {
         if(err){
           reject(err);
@@ -772,7 +772,7 @@ window.addEventListener(("load"), () => {
   // event ContributorStatement(address contributor, uint amountBurned, string message);
   window.csContract.getContributorStatementEvents = () => {
     return new Promise((resolve, reject) => {
-      var contributorStatement = CrowdServe.ContributorStatement({fromBlock: eventStartBlock, toBlock: 'latest'});
+      var contributorStatement = CrowdServe.ContributorStatement({}, {fromBlock: eventStartBlock, toBlock: 'latest'});
       contributorStatement.get((err, res) => {
         if(err){
           reject(err);
@@ -794,7 +794,7 @@ window.addEventListener(("load"), () => {
   // event WorkerStatement(string message);
   window.csContract.getWorkerStatementEvents = () => {
     return new Promise((resolve, reject) => {
-      var workerStatement = CrowdServe.WorkerStatement({fromBlock: eventStartBlock, toBlock: 'latest'});
+      var workerStatement = CrowdServe.WorkerStatement({}, {fromBlock: eventStartBlock, toBlock: 'latest'});
       workerStatement.get((err, res) => {
         if(err){
           reject(err);
@@ -866,9 +866,9 @@ window.addEventListener(("load"), () => {
     });
   }
 
-  window.csContract.setContributorStatement = (burnAmout, statement) => {
+  window.csContract.setContributorStatement = (burnAmountInEth, statement) => {
     return new Promise((resolve, reject) => {
-      CrowdServe.contributorStatement(statement, (err,res) => {
+      CrowdServe.contributorStatement(web3.toWei(burnAmountInEth), statement, (err,res) => {
         if(err){
           reject(err);
         } else{

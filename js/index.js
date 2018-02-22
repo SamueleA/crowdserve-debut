@@ -76,9 +76,8 @@ $(document).ready(function(){
       //proposalString
       if (res.state == "Active" || res.state == "Ending") {
         csContract.getRoundBegunEvents().then((roundBegun)=>{
-          //var lastProposal = roundBegun[roundBegun.length-1].args.proposalString;
-          //$('.proposal-text').text(lastProposal);
-          console.log('roundbegun', roundBegun);
+          var lastProposal = roundBegun[roundBegun.length-1].args.proposalString;
+          $('.proposal-text').text(safeTextTransform(lastProposal));
         });
       } else {
         $('.proposal-text').text('No proposal issued!');
