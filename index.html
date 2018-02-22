@@ -46,20 +46,18 @@
 
       <div id="mainVue">
         <h2 class= "text-center" style="margin-top: 40px;color:#F2F2F2">Crowdserve Interface</h2>
-        <div class="contract-info">
-          <div class = "row">
-            <div class="well well-sm flex-container">
-              <div class="contract-state-time">
-                <contract-state-output  :state='contractState' :preview='contractPreview'></contract-state-output>
-                <div><state-time-output style="margin-top:20px;":state='contractState' :preview-end-time='previewEndTime' :round-end-time='roundEndTime'></state-time-output></div>
-              </div>
-              <div class="proposal" >
-                <div class="panel panel-primary proposal-panel" >
-                  <div class="panel-heading">Proposal</div>
-                    <div class="panel-body">
-                      <div class='proposal-body scrollBar'>
-                        <div class="proposal-text"></div>
-                    </div>
+        <div class="contract-info row" style="display:inline-block;width:100%;">
+          <div class="well well-sm row flex-container">
+            <div class="contract-state-time">
+              <contract-state-output  :state='contractState' :preview='contractPreview'></contract-state-output>
+              <div><state-time-output style="margin-top:20px;":state='contractState' :preview-end-time='previewEndTime' :round-end-time='roundEndTime'></state-time-output></div>
+            </div>
+            <div class="proposal" >
+              <div class="panel panel-primary proposal-panel">
+                <div class="panel-heading">Proposal</div>
+                  <div class="panel-body">
+                    <div class='proposal-body scrollBar'>
+                      <div class="proposal-text" ></div>
                   </div>
                 </div>
               </div>
