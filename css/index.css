@@ -15,6 +15,7 @@ body {
   height: 100%;
   width:100%;
   position:absolute;
+  font-size:16px;
 
 }
 
@@ -87,6 +88,7 @@ h1 {
   height: 200px;
   position:relative;
   margin-top: 20px;
+  font-size: 20px;
 }
 
 .total-contributions > div {
@@ -95,6 +97,7 @@ h1 {
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
 
 .individual-contributions  > div{
   margin-top: 20px;
@@ -201,6 +204,10 @@ h1 {
 
   .warnings {
     margin-top:50px;
+  }
+
+  .total-contributions{
+    font-size: 100%;
   }
 
 

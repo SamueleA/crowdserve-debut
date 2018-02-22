@@ -67,12 +67,12 @@
         <div class="contributor-interface">
           <div class="well well-sm row">
             <div class="col-md-6">
-              <div class="total-contributions well well-sm" style="background-color:white;font-size: 20px">
+              <div class="total-contributions well well-sm" style="background-color:white;" align='center'>
                 <div style="text-align:left;">
-                  <div class="total-contributed"><span style='color:#22d822;'>+ <ether-output :wei="totalContributed"></ether-output></span> contributed</div>
-                  <div class="total-recalled"><span style="color:#dd250d;margin-left:3px;">- <ether-output :wei="totalRecalled"></ether-output></span> recalled</div>
-                  <div class="line" style='height:2px;background-color:black;width:210px;'></div>
-                  <div class="total-supply">Supply: <ether-output :wei="totalSupply"></ether-output></div>
+                  <div class="total-contributed" style='width:max-content;'><span style='color:#22d822;'>+ <ether-output :wei="totalContributed"></ether-output></span> contributed</div>
+                  <div class="total-recalled" style='width:max-content;'><span style="color:#dd250d;margin-left:3px;">- <ether-output :wei="totalRecalled"></ether-output></span> recalled</div>
+                  <div class="line" style='height:2px;background-color:black;width:100%;'></div>
+                  <div class="total-supply" style='width:max-content;'>Supply: <ether-output :wei="totalSupply"></ether-output></div>
                 </div>
               </div>
             </div>
@@ -124,9 +124,9 @@
             </div>
             <div class="modal-body">
               <div class="text-center" style="margin-top:20px;">
-                Contribute <input id="contribute-amount-input" class="form-control" style="display:inline-block;width:60%;" placeholder="amount"> ether<br>
-                <button style ="margin-top: 30px;" type="button" class="btn btn-primary" data-dismiss="modal" onclick="contributeFundsFromForm()">Add Funds</button>
+                Contribute <input id="contribute-amount-input" class="form-control" style="display:inline-block;width:55%;" placeholder="amount"> ether<br>
               </div>
+              <button style ="margin-top: 30px;" type="button" class="btn btn-primary" data-dismiss="modal" onclick="contributeFundsFromForm()">Add Funds</button>
             </div>
           </div>
         </div>
