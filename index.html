@@ -29,19 +29,20 @@
 
         <div id="navbar"></div>
       </div>
-      <div class="warnings">
-        <div id="noWeb3AccountWarning" hidden='true' align='center' class = "row">
-          <div class="alert alert-danger col-md-offset-3 col-md-6" style='display:inline-block;'>
-            <p><strong>No Ethereum account found.</strong></p>
-            <p>You are currently unable to initiate any commands. Make sure Metamask is installed and unlocked, and refresh.</p>
-          </div>
+
+      <div class ="warnings" >
+      <div id="noWeb3AccountWarning" hidden='true' align='center' class = "row">
+        <div class="alert alert-danger col-md-offset-3 col-md-6" style='display:inline-block;'>
+          <p><strong>No Ethereum account found.</strong></p>
+          <p>You are currently unable to initiate any commands. Make sure Metamask is installed and unlocked, and refresh.</p>
         </div>
-        <div id="networkWarning" hidden='true' align='center' class = "row" >
-          <div class="alert alert-danger col-md-offset-3 col-md-6" style='display:inline-block;'>
-            <p><strong>You are currently operating on the Ropsten testnet.</strong></p>
-            <p>To interact with a real crowdserve contract, change your Metamask network to the "Main" Ethereum network, and refresh.</p>
-          </div>
+      </div>
+      <div id="networkWarning" hidden='true' align='center' class = "row" >
+        <div class="alert alert-danger col-md-offset-3 col-md-6" style='display:inline-block;'>
+          <p><strong>You are currently operating on the Ropsten testnet.</strong></p>
+          <p>To interact with a real crowdserve contract, change your Metamask network to the "Main" Ethereum network, and refresh.</p>
         </div>
+      </div>
       </div>
 
       <div id="mainVue">
@@ -69,10 +70,10 @@
             <div class="col-md-6">
               <div class="total-contributions well well-sm" style="background-color:white;" align='center'>
                 <div style="text-align:left;">
-                  <div class="total-contributed" style='width:max-content;'><span style='color:#22d822;'>+ <ether-output :wei="totalContributed"></ether-output></span> contributed</div>
-                  <div class="total-recalled" style='width:max-content;'><span style="color:#dd250d;margin-left:3px;">- <ether-output :wei="totalRecalled"></ether-output></span> recalled</div>
+                  <div class="total-contributed"><span style='color:#22d822;'>+ <ether-output :wei="totalContributed"></ether-output></span> contributed</div>
+                  <div class="total-recalled" ><span style="color:#dd250d;margin-left:3px;">- <ether-output :wei="totalRecalled"></ether-output></span> recalled</div>
                   <div class="line" style='height:2px;background-color:black;width:100%;'></div>
-                  <div class="total-supply" style='width:max-content;'>Supply: <ether-output :wei="totalSupply"></ether-output></div>
+                  <div class="total-supply" >Supply: <ether-output :wei="totalSupply"></ether-output></div>
                 </div>
               </div>
             </div>

@@ -16,7 +16,6 @@ body {
   width:100%;
   position:absolute;
   font-size:16px;
-
 }
 
 
@@ -69,7 +68,7 @@ h1 {
 
 .proposal-body {
 
-  min-height:100px;
+  min-height:50px;
   max-height:200px;
   overflow-y: auto;
   word-break:break-word;
@@ -98,6 +97,12 @@ h1 {
   transform: translate(-50%, -50%);
 }
 
+.total-contributed,
+.total-recalled,
+.total-supply{
+  width:max-content;
+}
+
 
 .individual-contributions  > div{
   margin-top: 20px;
@@ -124,7 +129,6 @@ h1 {
   margin-top: 25px;
 }
 
-
 #mCSB_1_container {
   margin: 0;
 }
@@ -132,11 +136,15 @@ h1 {
   margin: 0;
 }
 
+.warnings {
+  margin-bottom: -20px;
+}
+
 
 /*max-width for large screens*/
 .contract-info,
 .contributor-interface,
- .statements {
+.statements {
   max-width: 1100px;
   display: inline-block;
 }
@@ -167,7 +175,7 @@ h1 {
   }
 }
 
-@media(max-width:500px){
+@media(max-width:550px){
   .header {
     margin-top:20px;
     margin-bottom: -20px;
@@ -202,13 +210,19 @@ h1 {
     padding: 10px;
   }
 
+  .total-contributions {
+    font-size: 18px;
+  }
+
   .warnings {
-    margin-top:50px;
+    margin-top: 50px;
   }
 
+
+}
+
+@media(max-width:400px){
   .total-contributions{
-    font-size: 100%;
+    font-size: 14px;
   }
-
-
 }
