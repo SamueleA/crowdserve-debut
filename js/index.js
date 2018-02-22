@@ -3,10 +3,12 @@ var workerAddress= 0x0;
 $(document).ready(function(){
   web3.version.getNetwork((err, netId) => {
     if (netId != "1") {
+      $(".warnings").show();
       $("#networkWarning").show();
     }
   });
   if (web3.eth.accounts.length == 0) {
+    $(".warnings").show();
     $("#noWeb3AccountWarning").show();
   }
 
