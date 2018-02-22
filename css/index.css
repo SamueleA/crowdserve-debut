@@ -29,6 +29,11 @@ body {
 h1 {
   font-size:50px;
   font-weight:bold;
+  border: 5px solid #FFAF03;
+  border-radius: 10px;
+  width: fit-content;
+  padding:25px;
+  background-color: #326499;
 }
 
 .site-main {
@@ -182,7 +187,7 @@ h1 {
   }
 
   h1 {
-    font-size: 35px;
+    font-size: 30px;
   }
 
   h2 {
