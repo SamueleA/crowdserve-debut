@@ -9,7 +9,7 @@ $(document).ready(function(){
   if (web3.eth.accounts.length == 0) {
     $("#noWeb3AccountWarning").show();
   }
-  
+
   var vueInstance = new Vue({
     el:'#mainVue',
     data:{
@@ -138,8 +138,8 @@ function transferFundsFromForm() {
 
 function recallFundsFromForm() {
   var inputAmount = $('#recall-amount-input').val();
-  var inputMessage = "Add message input to modal";
-  csContract.transfer(inputAmount,inputMessage);
+  var inputMessage = $('#recall-message-input').val();;
+  csContract.recall(inputAmount,inputMessage);
 }
 
 function sendStatementFromForm() {
@@ -147,7 +147,6 @@ function sendStatementFromForm() {
   if (web3.eth.accounts[0] == workerAddress) {
     csContract.setWorkerStatement(chatInput);
   } else {
-    console.log('test');
     csContract.setContributorStatement(0, chatInput);
   }
   console.log('statement sent!');
