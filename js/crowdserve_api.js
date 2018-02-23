@@ -644,7 +644,7 @@ window.addEventListener(("load"), () => {
           res.forEach((element) => {
             var parsedArgsObject = parseEventArguments(element.args);
             var eventObject = {event: element.event, transactionHash: element.transactionHash, blockNumber:element.blockNumber, args: parsedArgsObject};
-            
+
             var tsPromise = new Promise((tsResolve, reject) => {
               getBlockTimeStamp(element.blockHash).then(timestamp => {
                 eventObject.timestamp = timestamp;
@@ -652,10 +652,10 @@ window.addEventListener(("load"), () => {
               });
             });
             tsPromiseArray.push(tsPromise);
-            
+
             allEventsArray.push(eventObject);
           });
-          
+
           Promise.all(tsPromiseArray).then(function() {
             resolve(allEventsArray);
           });
@@ -878,9 +878,9 @@ window.addEventListener(("load"), () => {
     });
   }
 
-  window.csContract.setWorkerStatement = (statement) => {
+  window.csContract.setProducerStatement = (statement) => {
     return new Promise((resolve, reject) => {
-      CrowdServe.workerStatement(statement, (err,res) => {
+      CrowdServe.producerStatement(statement, (err,res) => {
         if(err){
           reject(err);
         } else{

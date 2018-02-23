@@ -120,7 +120,7 @@ function recallFundsFromForm() {
 function sendStatementFromForm() {
   var chatInput = $('#statement-text-input').val();
   if (web3.eth.accounts[0] == workerAddress) {
-    csContract.setWorkerStatement(chatInput);
+    csContract.setProducerStatement(chatInput);
   } else {
     csContract.setContributorStatement(0, chatInput);
   }
