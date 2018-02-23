@@ -79,10 +79,10 @@ $(document).ready(function(){
       if (res.state == "Active" || res.state == "Ending") {
         csContract.getRoundBegunEvents().then((roundBegun)=>{
           var lastProposal = roundBegun[roundBegun.length-1].args.proposalString;
-          $('.proposal-text').text(safeTextTransform(lastProposal));
+          $('.proposal-text').html(safeTextTransform(lastProposal));
         });
       } else {
-        $('.proposal-text').text('No proposal issued!');
+        $('.proposal-text').html('No proposal issued!');
       }
     });
 
