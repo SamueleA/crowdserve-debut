@@ -152,7 +152,7 @@ Vue.component('contract-state-output', {
         return "#aaaaaa";
     }
   },
-  template: "<div class='well well-sm' style='display:inline-block;margin-bottom:0;color:black;width:250px;text-align:center;' v-bind:style='{backgroundColor:color}'><h3 style='margin-top:0;margin-bottom:0'>{{state}}<span v-if='preview'> (Preview)</span></h3></div>"
+  template: "<div class='well well-sm' style='display:inline-block;margin-bottom:0;color:black;width:275px;text-align:center;' v-bind:style='{backgroundColor:color}'><h3 style='margin-top:0;margin-bottom:0'>{{state}}<span v-if='preview'> (Preview)</span></h3></div>"
 });
 
 //outputs information about the autorelease of the burnable payment
@@ -197,7 +197,7 @@ Vue.component('state-time-output', {
   mounted: function() {
     this.calculate();
   },
-  template: "<div style='display:inline-block;'><div class='well well-sm text-left' style='margin-bottom:0;display:flex;justify-content:center;flex-direction:column;background-color:#ffdd99;width:250px;height:60px;' v-html='labelText'></div></div>"
+  template: "<div style='display:inline-block;'><div class='well well-sm text-left' style='margin-bottom:0;display:flex;text-align:center;flex-direction:column;background-color:#ffdd99;width:275px;' v-html='labelText'></div></div>"
 });
 
 Vue.component('crowdserve-event-row', {
