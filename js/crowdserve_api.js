@@ -598,10 +598,10 @@ window.addEventListener(("load"), () => {
         }
         else {
           var fullState = {
-          // minPreviewInterval, minContribution, worker, state, inPreview, previewStageEndTime, roundEndTime, totalContributed, totalRecalled, totalSupply
+          // minPreviewInterval, minContribution, producer, state, inPreview, previewStageEndTime, roundEndTime, totalContributed, totalRecalled, totalSupply
           minPreviewInterval: Number(new web3.BigNumber(res[0])),
           minContribution: Number(new web3.BigNumber(res[1])),
-          worker: res[2],
+          producer: res[2],
           inPreview: res[4],
           state: stateOutput(Number(res[3]), res[4]),
           previewStageEndTime: Number(new web3.BigNumber(res[5])),
@@ -791,22 +791,22 @@ window.addEventListener(("load"), () => {
     });
   }
 
-  // event WorkerStatement(string message);
-  window.csContract.getWorkerStatementEvents = () => {
+  // event ProducerStatement(string message);
+  window.csContract.getProducerStatementEvents = () => {
     return new Promise((resolve, reject) => {
-      var workerStatement = CrowdServe.WorkerStatement({}, {fromBlock: eventStartBlock, toBlock: 'latest'});
-      workerStatement.get((err, res) => {
+      var producerStatement = CrowdServe.ProducerStatement({}, {fromBlock: eventStartBlock, toBlock: 'latest'});
+      producerStatement.get((err, res) => {
         if(err){
           reject(err);
         }
         else{
-          var workerStatementEventsArray = [];
+          var producerStatementEventsArray = [];
           res.forEach((element) => {
             var parsedArguments = {message: element.args.message}
             var eventObject = {args: parsedArguments, event: element.event, transactionHash: element.transactionHash}
-            workerStatementEventsArray.push(eventObject);
+            producerStatementEventsArray.push(eventObject);
           });
-          resolve(workerStatementEventsArray);
+          resolve(producerStatementEventsArray);
         }
       });
     });

@@ -1,4 +1,4 @@
-var workerAddress= 0x0;
+var producerAddress= 0x0;
 
 $(document).ready(function(){
   web3.version.getNetwork((err, netId) => {
@@ -67,7 +67,7 @@ $(document).ready(function(){
 
   window.addEventListener("crowdserve_loaded", () =>{
     csContract.getFullState().then((res) =>{
-      workerAddress = res.worker;
+      producerAddress = res.producer;
       vueInstance.contractState =  res.state;
       vueInstance.contractPreview = res.inPreview;
       vueInstance.previewEndTime = res.previewStageEndTime;
@@ -119,7 +119,7 @@ function recallFundsFromForm() {
 
 function sendStatementFromForm() {
   var chatInput = $('#statement-text-input').val();
-  if (web3.eth.accounts[0] == workerAddress) {
+  if (web3.eth.accounts[0] == producerAddress) {
     csContract.setProducerStatement(chatInput);
   } else {
     csContract.setContributorStatement(0, chatInput);
