@@ -91,35 +91,8 @@ $(document).ready(function(){
     });
 
     //events
-    csContract.getAllEvents().then((res) =>{
-      for (var i=0; i< res.length; i++) {
-        switch(res[i].event) {
-          case 'RoundBegun':
-            vueInstance.events.push({event:'RoundBegun',timestamp:res[i].timestamp, blockNumber:res[i].blockNumber, args:{amount:res[i].args.amount, from:res[i].args.from}});
-            break;
-          case 'RoundEnding':
-            vueInstance.events.push({event:'RoundEnding',timestamp:res[i].timestamp, blockNumber:res[i].blockNumber, args:{amount:res[i].args.amount, from:res[i].args.from}});
-            break;
-          case 'RoundEnded':
-            vueInstance.events.push({event:'RoundEnded',timestamp:res[i].timestamp, blockNumber:res[i].blockNumber, args:{amountRecalled:res[i].args.amountRecalled, amountWithdrawn:res[i].args.amountWithdrawn}});
-            break;
-          case 'Contribution':
-            vueInstance.events.push({event:'Contribution',timestamp:res[i].timestamp, blockNumber:res[i].blockNumber, args:{contributor:res[i].args.contributor, amount:res[i].args.amount}});
-            break;
-          case 'FundsRecalled':
-            vueInstance.events.push({event:'FundsRecalled',timestamp:res[i].timestamp, blockNumber:res[i].blockNumber, args:{contributor:res[i].args.contributor, amountBurned:res[i].args.amountBurned,amountReturned:res[i].args.amountReturned, message:res[i].args.message}});
-            break;
-          case 'ContributorStatement':
-            vueInstance.events.push({event:'ContributorStatement',timestamp:res[i].timestamp, blockNumber:res[i].blockNumber, args:{contributor:res[i].args.contributor, amountBurned:res[i].args.amountBurned, message:res[i].args.message}});
-            break;
-          case 'WorkerStatement':
-            vueInstance.events.push({event:'WorkerStatement',timestamp:res[i].timestamp, blockNumber:res[i].blockNumber, args:{message:res[i].args.message}});
-            break;
-          case 'Transfer':
-            vueInstance.events.push({event:'Transfer',timestamp:res[i].timestamp, blockNumber:res[i].blockNumber, args:{from:res[i].args.from,to:res[i].args.to, value:res[i].args.value}});
-            break;
-        }
-      }
+    csContract.getAllEvents().then((events) =>{
+      vueInstance.events=events;
     });
   });
 });
