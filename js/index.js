@@ -29,6 +29,7 @@ $(document).ready(function(){
       if (window.matchMedia("(max-width: 500px)").matches) {
         $('.popover-bubble > span').data('container','body');
       }
+      $('.chat-container>div:first' ).find('.popover-bubble>span').data('placement', 'bottom');
       $('[data-toggle="popover"]')
         .on('click',function(e){
           e.preventDefault();
